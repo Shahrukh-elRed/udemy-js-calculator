@@ -73,3 +73,21 @@ header {
 #arrays-objects-compare {
   font-weight: 500;
 }
+
+#learned-js-two {
+  margin: 2rem auto;
+  background-color: aqua;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 26rem;
+  font-weight: 500;
+}
+
+#learned-js-three {
+  margin: 2rem auto;
+  background-color: aqua;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 26rem;
+  font-weight: 500;
+}
