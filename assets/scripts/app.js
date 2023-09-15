@@ -16,10 +16,14 @@ function formObject(type, defaultResult, userInput, currentResult) {
 
 function calculation(type) {
   if (userInput.value !== "" && !isNaN(userInput.value)) {
+    if (userInput.value == 0) {
+      console.log("value is 0");
+    }
     if (userInput.value != 0) {
       let backup = currentResult;
 
       if (type === "ADD") {
+        console.log("add block executed");
         calculationDescription = `${currentResult} + ${parseInt(
           userInput.value
         )}`;
@@ -28,6 +32,7 @@ function calculation(type) {
         logList.push(calculationDescription);
         formObject(type, backup, userInput.value, currentResult);
       } else if (type === "SUB") {
+        console.log("subtract block executed");
         calculationDescription = `${currentResult} - ${parseInt(
           userInput.value
         )}`;
@@ -36,6 +41,7 @@ function calculation(type) {
         logList.push(calculationDescription);
         formObject(type, backup, userInput.value, currentResult);
       } else if (type === "MULTIPLY") {
+        console.log("multiply block executed");
         calculationDescription = `${currentResult} * ${parseInt(
           userInput.value
         )}`;
@@ -45,6 +51,7 @@ function calculation(type) {
         logList.push(calculationDescription);
         formObject(type, backup, userInput.value, currentResult);
       } else if (type === "DIVIDE") {
+        console.log("divide block executed");
         calculationDescription = `${currentResult} / ${parseInt(
           userInput.value
         )}`;
@@ -54,6 +61,7 @@ function calculation(type) {
 
         formObject("DIVIDE", backup, userInput.value, currentResult);
       } else if (type === "MODULUS") {
+        console.log("modulus block executed");
         calculationDescription = `${currentResult} % ${parseInt(
           userInput.value
         )}`;
@@ -62,7 +70,7 @@ function calculation(type) {
         outputResult(currentResult, calculationDescription);
 
         logList.push(calculationDescription);
-        formObject("MODULUs", backup, userInput.value, currentResult);
+        formObject("MODULUS", backup, userInput.value, currentResult);
       }
     }
   } else {
