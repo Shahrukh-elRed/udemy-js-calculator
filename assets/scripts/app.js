@@ -149,6 +149,9 @@ function modulus() {
 }
 
 function ResetAll() {
+  //   if (currentResult > 0 && currentResult < 50) return;
+  //   if (currentResult > 0 || isNaN(currentResult)) return;
+
   currentResult = 10;
   calculationDescription = "";
   userInput.value = "";
