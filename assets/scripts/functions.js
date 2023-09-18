@@ -86,32 +86,62 @@ startGameBtn.addEventListener("click", () => {
 
 // ...numbers is a rest parameter that can take any number of arguments and packs them into an array.
 //   There can only be 1 rest parameter in a function and it should be the last parameter
-const sumUp = (resultHandler, ...numbers) => {
+const combine = (resultHandler, operation, ...numbers) => {
   const validateNumber = (number) => {
     return isNaN(number) ? 0 : number;
   };
 
   let sum = 0;
   for (const num of numbers) {
-    sum += validateNumber(num);
+    if (operation === "ADD") {
+      sum += validateNumber(num);
+    } else {
+      sum -= validateNumber(num);
+    }
   }
   resultHandler(sum);
 };
 
-const subtractUp = function () {
-  let sum = 0;
+// const subtractUp = function(resultHandler, ...numbers) {
+//   let sum = 0;
+//   for (const num of numbers) {
+//     // don't use that
+//     sum -= num;
+//   }
+//   resultHandler(sum, 'The result after adding all numbers is');
+// };
 
-  // don't use this reserved arguments keyword use rest parameter instead
-  for (const num of arguments) {
-    sum -= num;
-  }
-  return sum;
+const showResult = (messageText, result) => {
+  alert(messageText + " " + result);
 };
 
-const showResult = (result) => {
-  alert("The result after adding all numbers is: " + result);
-};
-
-sumUp(showResult, 1, 5, "fdsa", -3, 6, 10);
-sumUp(showResult, 1, 5, 10, -3, 6, 10, 25, 88);
-console.log(subtractUp(1, 10, 15, 20));
+combine(
+  showResult.bind(this, "The result after adding all numbers is:"),
+  "ADD",
+  1,
+  5,
+  "fdsa",
+  -3,
+  6,
+  10
+);
+combine(
+  showResult.bind(this, "The result after adding all numbers is:"),
+  "ADD",
+  1,
+  5,
+  10,
+  -3,
+  6,
+  10,
+  25,
+  88
+);
+combine(
+  showResult.bind(this, "The result after subtracting all numbers is:"),
+  "SUBTRACT",
+  1,
+  10,
+  15,
+  20
+);
