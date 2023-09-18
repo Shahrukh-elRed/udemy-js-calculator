@@ -15,9 +15,9 @@
 // console.log(name, hobbies);
 
 // greet();
-'use strict';
+"use strict";
 
-const userName = 'Max';
+const userName = "Max";
 var undefined = 5;
 
 console.log(userName);

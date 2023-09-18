@@ -101,6 +101,15 @@ header {
   font-weight: 500;
 }
 
+#learned-js-five {
+  margin: 2rem auto;
+  background-color: aqua;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 26rem;
+  font-weight: 500;
+}
+
 #monster-killer-link {
   text-align: center;
   margin-bottom: 2rem;
