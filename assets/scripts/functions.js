@@ -81,3 +81,18 @@ startGameBtn.addEventListener("click", () => {
   alert(message);
   gameIsRunning = false;
 });
+
+// not related to game
+
+// ...numbers is a rest parameter that can take any number of arguments and packs them into an array.
+//   There can only be 1 rest parameter in a function and it should be the last parameter
+const sumUp = (a, b, ...numbers) => {
+  let sum = 0;
+  for (const num of numbers) {
+    sum += num;
+  }
+  return sum;
+};
+
+console.log(sumUp(1, 5, 10, -3, 6, 10));
+console.log(sumUp(1, 5, 10, -3, 6, 10, 25, 88));
