@@ -86,13 +86,32 @@ startGameBtn.addEventListener("click", () => {
 
 // ...numbers is a rest parameter that can take any number of arguments and packs them into an array.
 //   There can only be 1 rest parameter in a function and it should be the last parameter
-const sumUp = (a, b, ...numbers) => {
+const sumUp = (resultHandler, ...numbers) => {
+  const validateNumber = (number) => {
+    return isNaN(number) ? 0 : number;
+  };
+
   let sum = 0;
   for (const num of numbers) {
-    sum += num;
+    sum += validateNumber(num);
+  }
+  resultHandler(sum);
+};
+
+const subtractUp = function () {
+  let sum = 0;
+
+  // don't use this reserved arguments keyword use rest parameter instead
+  for (const num of arguments) {
+    sum -= num;
   }
   return sum;
 };
 
-console.log(sumUp(1, 5, 10, -3, 6, 10));
-console.log(sumUp(1, 5, 10, -3, 6, 10, 25, 88));
+const showResult = (result) => {
+  alert("The result after adding all numbers is: " + result);
+};
+
+sumUp(showResult, 1, 5, "fdsa", -3, 6, 10);
+sumUp(showResult, 1, 5, 10, -3, 6, 10, 25, 88);
+console.log(subtractUp(1, 10, 15, 20));
