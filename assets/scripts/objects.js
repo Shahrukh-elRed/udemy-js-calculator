@@ -1,7 +1,7 @@
-const movieList = document.getElementById("movie-list");
+// const movieList = document.getElementById("movie-list");
 
-movieList.style["background-color"] = "red";
-movieList.style.display = "block";
+// movieList.style["background-color"] = "red";
+// movieList.style.display = "block";
 
 const userChosenKeyName = "level";
 
@@ -31,7 +31,6 @@ console.log(person[1.5]);
 console.log(person);
 
 // movie list
-
 const addMovieBtn = document.getElementById("add-movie-btn");
 const searchBtn = document.getElementById("search-btn");
 
@@ -50,7 +49,13 @@ const renderMovies = () => {
 
   movies.forEach((movie) => {
     const movieEl = document.createElement("li");
-    movieEl.textContent = movie.info.title;
+    let text = movie.info.title + " - ";
+    for (const key in movie.info) {
+      if (key !== "title") {
+        text = text + `${key}: ${movie.info[key]}`;
+      }
+    }
+    movieEl.textContent = text;
     movieList.append(movieEl);
   });
 };
