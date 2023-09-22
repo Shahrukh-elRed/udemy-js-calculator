@@ -12,6 +12,7 @@
     "quotes": "off",
     "semi": "off",
     "space-before-function-paren": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "comma-dangle": "off"
   }
 }
