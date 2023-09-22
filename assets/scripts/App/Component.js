@@ -1,4 +1,5 @@
-export class Component {
+export function doSomething() {}
+export default class {
   constructor(hostElementId, insertBefore = false) {
     if (hostElementId) {
       this.hostElement = document.getElementById(hostElementId);
@@ -17,7 +18,7 @@ export class Component {
 
   attach() {
     this.hostElement.insertAdjacentElement(
-      this.insertBefore ? 'afterbegin' : 'beforeend',
+      this.insertBefore ? "afterbegin" : "beforeend",
       this.element
     );
   }
